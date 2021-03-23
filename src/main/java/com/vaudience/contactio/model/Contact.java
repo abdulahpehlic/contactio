@@ -39,4 +39,5 @@ public class Contact {
 		this.fullName = name;
 		this.birthDate = birthDate;
 	}
+	public Contact() {};
 }
