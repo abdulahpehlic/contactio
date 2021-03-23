@@ -12,8 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "Contact")
+@Data
 public class Contact {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -27,33 +32,11 @@ public class Contact {
 	private Date birthDate;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")
+	@JoinColumn(name = "addressId")
 	private Address address;
 	
 	public Contact(String name, Date birthDate) {
 		this.fullName = name;
 		this.birthDate = birthDate;
-	}
-	
-	public Long getContactId() {
-		return contactId;
-	}
-	public String getName() {
-		return fullName;
-	}
-	public void setName(String name) {
-		this.fullName = name;
-	}
-	public Date getBrithDate() {
-		return birthDate;
-	}
-	public void setBrithDate(Date brithDate) {
-		this.birthDate = brithDate;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 }
