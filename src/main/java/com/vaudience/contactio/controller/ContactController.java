@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,8 @@ import com.vaudience.contactio.repository.ContactRepository;
 @RequestMapping("/api/v1")
 public class ContactController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(ContactController.class);
+	
     @Autowired
     private ContactRepository contactRepository;
 
@@ -39,6 +43,8 @@ public class ContactController {
 
     @PostMapping("/contacts/create")
     public Contact createContact(@Valid @RequestBody Contact contact) {
-        return contactRepository.save(contact);
+    	Contact createdContact = contactRepository.save(contact);
+    	LOGGER.info("A new contact has been created: {}", createdContact);
+        return createdContact;
     }
 }
