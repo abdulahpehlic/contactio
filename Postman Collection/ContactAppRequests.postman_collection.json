@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "caaf4d44-ba52-4564-85f9-792fb97051fd",
+		"name": "ContactAppRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get contacts by postal code (Würzburg)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/contacts/postalCode/?postalCode=97082",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts",
+						"postalCode",
+						""
+					],
+					"query": [
+						{
+							"key": "postalCode",
+							"value": "97082"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Annike Becker\",\r\n    \"birthDate\": \"1972-01-12T07:25:06.000+00:00\",\r\n    \"address\": {\r\n        \"city\": \"München\",\r\n        \"postalCode\": \"80331\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/contacts/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

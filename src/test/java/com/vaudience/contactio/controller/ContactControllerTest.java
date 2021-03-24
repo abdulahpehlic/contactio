@@ -24,7 +24,7 @@ import com.vaudience.contactio.repository.ContactRepository;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ContactController.class)
-public class ContactControllerTest {
+class ContactControllerTest {
 
 	@MockBean
 	private ContactRepository contactRepository;
@@ -45,7 +45,7 @@ public class ContactControllerTest {
 	@Test
 	void testGetContactsByPostalCode() throws Exception {
 		when(contactRepository.findByAddressPostalCode(Mockito.anyString())).thenReturn(null);
-		mvc.perform(get("/api/v1/contacts?" + "71000")
+		mvc.perform(get("/api/v1/contacts/postalCode?postalCode=" + "71000")
 			      .contentType(MediaType.APPLICATION_JSON))
 			      .andExpect(status().isOk());
 	}
