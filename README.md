@@ -18,6 +18,37 @@ To run the app follow the steps below:
 ##### 3. Run the app with your IDE
 ##### 4. Once the app is successfully built, you can use the postman collection in project root (Postman Collection folder) and import it to your Postman. You will have several requests ready to test the endpoints.
 _______________________________________________________
+Endpoints description:
+###### Retrieving all contacts (Returns all contacts from the database):
+`Method type: GET`
+
+`Path: api/v1/contacts`
+
+###### Contacts filtered by postal code (Returns contacts with the specified postal code):
+`Method type: GET`
+
+`Path: api/v1/contacts/postalCode/{postalCode}`
+
+`Example: api/v1/contacts/postalCode/?postalCode=97082`
+
+###### Add a new contact (Stores a new contact into the database):
+`Method type: POST`
+
+`Path: api/v1/contacts/create`
+
+`RequestBody: You must provide a contact as a JSON object in the following form:`
+
+```
+{
+    "fullName": "Annike Becker",
+    "birthDate": "1972-01-12T07:25:06.000+00:00",
+    "address": {
+        "city": "München",
+        "postalCode": "80331"
+    }
+}
+```
+_______________________________________________________
 You can see images of a SonarQube report for the project in project root (Sonar Report folder).
 
 If you want to run Sonar report yourself, follow the steps below:
