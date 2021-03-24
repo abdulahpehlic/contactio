@@ -15,8 +15,6 @@ import com.vaudience.contactio.repository.ContactRepository;
 
 @SpringBootApplication
 public class ContactioApplication {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(ContactioApplication.class);
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ContactioApplication.class, args);

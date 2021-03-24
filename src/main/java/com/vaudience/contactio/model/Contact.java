@@ -13,8 +13,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table(name = "Contact")
@@ -39,5 +37,5 @@ public class Contact {
 		this.fullName = name;
 		this.birthDate = birthDate;
 	}
-	public Contact() {};
+	public Contact() {}
 }
