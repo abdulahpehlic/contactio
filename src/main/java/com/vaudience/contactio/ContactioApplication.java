@@ -2,8 +2,6 @@ package com.vaudience.contactio;
 
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,12 +20,10 @@ public class ContactioApplication {
 	
 	@Bean
 	public CommandLineRunner demo(ContactRepository contactRepository) {
-		Contact contact = new Contact("Abdulah", new Date());
 
         Address address = new Address("Sarajevo", "71000");
-
-        // associate the objects
-        contact.setAddress(address);
+        
+		Contact contact = new Contact("Abdulah", new Date(), address);
 
         contactRepository.save(contact);
 		return null;

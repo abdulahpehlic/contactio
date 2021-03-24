@@ -33,7 +33,7 @@ public class ContactController {
     @GetMapping("/contacts/postalCode")
     @ResponseBody
     public ResponseEntity<Contact> getContactByZipCode(@RequestParam(name = "postalCode") String postalCode) {
-    	Contact contact = contactRepository.findByAddress_PostalCode(postalCode);
+    	Contact contact = contactRepository.findByAddressPostalCode(postalCode);
         return ResponseEntity.ok().body(contact);
     }
 

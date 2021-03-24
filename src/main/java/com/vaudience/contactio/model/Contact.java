@@ -33,9 +33,10 @@ public class Contact {
 	@JoinColumn(name = "addressId")
 	private Address address;
 	
-	public Contact(String name, Date birthDate) {
+	public Contact(String name, Date birthDate, Address address) {
 		this.fullName = name;
 		this.birthDate = birthDate;
+		this.address = address;
 	}
 	public Contact() {}
 }
