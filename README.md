@@ -19,19 +19,19 @@ To run the app follow the steps below:
 ##### 4. Once the app is successfully built, you can use the postman collection in project root (Postman Collection folder) and import it to your Postman. You will have several requests ready to test the endpoints.
 _______________________________________________________
 Endpoints description:
-###### Retrieving all contacts (Returns all contacts from the database):
+###### -Retrieving all contacts (Returns all contacts from the database):
 `Method type: GET`
 
 `Path: api/v1/contacts`
 
-###### Contacts filtered by postal code (Returns contacts with the specified postal code):
+###### -Contacts filtered by postal code (Returns contacts with the specified postal code):
 `Method type: GET`
 
 `Path: api/v1/contacts/postalCode/{postalCode}`
 
 `Example: api/v1/contacts/postalCode/?postalCode=97082`
 
-###### Add a new contact (Stores a new contact into the database):
+###### -Add a new contact (Stores a new contact into the database):
 `Method type: POST`
 
 `Path: api/v1/contacts/create`
