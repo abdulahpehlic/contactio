@@ -1,25 +1,14 @@
 package com.vaudience.contactio.model;
 
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 
-class ContactTest {
+public class ContactTest {
 
-
-	@Autowired
-    private MockMvc mvc;
 	@Test
 	public void constructorTest() {
 		Date testDate = new Date();
@@ -37,11 +26,5 @@ class ContactTest {
 		assertNull(testContact.getFullName());
 		assertNull(testContact.getBirthDate());
 		assertNull(testContact.getAddress());
-		mvc.perform(get("/api/v1/contacts")
-			      .contentType(MediaType.APPLICATION_JSON))
-			      .andExpect(status().isOk())
-			      .andExpect(content()
-			      .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-			      .andExpect(jsonPath("$[0].name", is("bob")));
 	}
 }

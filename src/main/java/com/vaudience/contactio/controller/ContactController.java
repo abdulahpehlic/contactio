@@ -37,7 +37,7 @@ public class ContactController {
         return ResponseEntity.ok().body(contact);
     }
 
-    @PostMapping("/contacts")
+    @PostMapping("/contacts/create")
     public Contact createContact(@Valid @RequestBody Contact contact) {
         return contactRepository.save(contact);
     }
