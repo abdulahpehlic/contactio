@@ -58,7 +58,7 @@ If you want to run Sonar report yourself, follow the steps below:
 ###### -In conf folder inside Sonar folder you will find a wrapper.conf
 ###### -Inside wrapper.conf, alter `wrapper.java.command` to this: 
 `wrapper.java.command=C:\Program Files\Java\<YourJava11+Folder>\bin\java`
-######-Don't forget to modify the Java folder in the previous line
+###### -Don't forget to modify the Java folder in the previous line
 ##### 4. Once done, run StartSonar.bat
 ##### 5. This will start a local Sonar instance on http://localhost:9000/
 ##### 6. Once you enter the server you will be prompted to enter a username and a password, both of which are "admin"
